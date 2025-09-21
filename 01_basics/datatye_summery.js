@@ -42,7 +42,7 @@ const myfunction = function(){
 
 //---------------------------------------------------------------------
 
-//there are two types of memory -- stack memory and heap memory
+//there are two types of memory -- stack memory(primitive) and heap memory(non-primitive)
 
 //stack memory means where you can chnage or modify the value of copied one..it doesn't change the actual value..it chnages the value of one copy.
 
