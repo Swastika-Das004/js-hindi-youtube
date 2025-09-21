@@ -32,12 +32,43 @@ let myobj ={
     age : 20,
 }
 
-//defining any function in variable 
-const myfunction = myfunc(){
+ //defining any function in variable 
+const myfunction = function(){
     console.log("hellooo bachhoo")
-} 
+}; 
 
 
   //  Javascript is a dynamically typed language becaus there is no need to define datatype
 
+//---------------------------------------------------------------------
+
+//there are two types of memory -- stack memory and heap memory
+
+//stack memory means where you can chnage or modify the value of copied one..it doesn't change the actual value..it chnages the value of one copy.
+
+// heap memory means where the original value is chnaged not the copy..if you chnage or modify anything it also chnages the original value.
+
+let myyoutube ="swastikadotcom"
+let anothername= myyoutube
+
+anothername="gintudotcom"
+
+console.log(anothername)// output-- gintudotcom
+console.log(myyoutube)// output-- swastikadotcom
+
+//because here the variable is myyoutube and it's original value is swastikadotcom and anothername is just a copy..so when we change the anothername's value it only chnaged the anothername's value and that is copied but it didn't chnage the original value that is swastikadotcom. so this is stack memory where we cann't chnage the original value but can modify the copied one's.
+
+let userOne = {
+  email: "swastika@gmail.com",
+  age: 20
+}
+
+let userTwo = userOne
+
+userTwo.age= 30
+
+console.log(userOne.age)// output-- 30
+console.log(userTwo.age)// output-- 30
+ 
+//in heap memory whenever we modify any value it chnages the original one also...thatswhy when we changed the value into 30 it chnaged the value of userOne value also.
 
