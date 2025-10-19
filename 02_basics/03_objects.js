@@ -1,4 +1,4 @@
-// we can declare objects in two ways -- 1)like literal literal  2) like constructor
+// we can declare objects in two ways -- 1)like literal   2) like constructor
 
 // *** if we create an object by lilteral it will never be an singleton but if we create it from constructor it will be singleton *** //
 
@@ -42,3 +42,9 @@ console.log(jsuser["email"]);
 Object.freeze(jsuser)
 
 // after freezing if we chnage any value it will not be chnaged it will same as before which we have locked
+ 
+console.log(jsuser); // here we can see the mySym as symbol...it will come out like [Symbol(key1)]: '7657'
+
+// remember-- when you write it like normal key as mySym it will showed in o/p as mySym: 7675  but when we just add [] that means we are declaring it as symbol and it will look like [Symbol(key1)]: '7657' in o/p
+
+// read about "this" in function from MDN
