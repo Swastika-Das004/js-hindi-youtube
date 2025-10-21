@@ -55,6 +55,31 @@ console.log(tinderUser.hasOwnProperty('isLoggedIn')); // it is used to check any
 
 
 
+//-------------------------------------------------------------------------------------------------
+
+
+const course= {
+    courseName: "JS in hindi",
+    courseInstructor: "HItesh",
+    price: "999"
+}
+
+// if we want to extract any value from any objects we can use this simple methods-->
+console.log(course.courseInstructor);
+//but if there is a need to print it or using it again and again it is not easy to every time we can type the same line so there is a different way to get rid from this-->
+const {courseInstructor} = course
+console.log(courseInstructor); // so now if we want to use it agian there is no need to write it like course.courseInstructor  instead of this we can simply write only the key like courseInstructor
+
+//or if we want to give a short name to any key so we can use it again-->
+const { courseInstructor: instructor } = course // now we can use this only "instructor" word in next lines..
+
+// like-->
+console.log(instructor);
+
+
+
+
+
 
 
 
