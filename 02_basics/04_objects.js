@@ -76,7 +76,13 @@ const { courseInstructor: instructor } = course // now we can use this only "ins
 // like-->
 console.log(instructor);
 
+// {
+//     "name"= "swastika",
+//     "age"=20
+//     "college"= "neotia"
+// }  we get APIs like in theses format..like object but there is no object name...after getting this we can convert it into object and then we can work with it
 
+// JSON-- JavaScript Object Notation
 
 
 
