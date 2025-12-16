@@ -6,7 +6,7 @@
 // two types of phase-- 1) Memory Creation Phase
 //                      2)Execution phase
 
-// in memory execution phase only the places are allocated for variables or whatever we have declared .( means no mathematical function happen here)
+// in memory creation phase only the places are allocated for variables or whatever we have declared .( means no mathematical function happen here)
 //and in execution phase there happens all the mathematical functions
 
 // let consider a code--
@@ -31,7 +31,7 @@ let result2 = addNum(7, 0)
 // result2 -> undefined
 
 
-// Execution phase >>
+// 3) Execution phase >>
 // val1 = 12
 // val2 = 3
 // addNum(empty)..because MCP has already hold this function defination so here nothing will happen
@@ -61,5 +61,4 @@ let result2 = addNum(7, 0)
 // val2 = 3
 // addNum(empty)
 // result = 15( this one is now added)
-
 
