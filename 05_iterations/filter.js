@@ -28,16 +28,22 @@ myNum.filter( (num) => {
 
 const book = [
     { title : "book one", genre: "fiction", publish: 1981, edition: 2004},
-    { title : "book two", genre: "history", publish: 1989, edition: 2010},
-    { title : "book three", genre: "history", publish: 1961, edition: 2009},
+    { title : "book two", genre: "history", publish: 2007, edition: 2010},
+    { title : "book three", genre: "history", publish: 1961, edition: 2004},
     { title : "book four", genre: "science", publish: 1991, edition: 2014},
 ]
 
 // want to have only those books which genre is history
 
-const userBooks = book.filter( (item) => item.genre === "history")
+let userBooks = book.filter( (item) => item.genre === "history")
 
+//console.log(userBooks);
+
+// if we want to print those which is frrom genre ficton and also got published after 2000-->
+
+userBooks = book.filter( (item) => {
+     return item.genre ==="history" && item.publish>2005
+})
 console.log(userBooks);
 
-//13:59
 
