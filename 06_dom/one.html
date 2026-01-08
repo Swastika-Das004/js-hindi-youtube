@@ -14,6 +14,9 @@
 <body class="bg-black">
     <div >
         <h1 id="title" class ="heading">DOM learning on Chai aur code <span style="display: none;">test text</span></h1>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <h2>Lorem, ipsum dolor.</h2>
+        <h2>Lorem ipsum dolor sit amet consectetur.</h2>
         <p>Lorem ipsum dolor sit.</p>
     </div>
 </body>
@@ -24,6 +27,12 @@
 
 //things to understand thorugh console: 
 
+//we can select any element by many queries like --->
+
+//document.getElementbyId
+// document.getElementbyClassName
+
+
 // we have used span here and did style display:none to understand whats the diffrence between textContent and innerText
 
 // if we do this-> title.innerText
@@ -31,3 +40,17 @@
 
 // and if we do this --> title.textContent
 // it will show us the full text whatever is given as a input
+
+// if we do --> title.innerHTML
+// it will show us the total html value..and if there are some html values are present then it also show this. like here it will show [] DOM learning on Chai aur code <span style="display: none;">test text</span> ] so here span is also being showed..
+
+// innerHTML supports html tags but innerText or textContent doesn't supports html tags
+
+// some query selector ->
+
+// document.querySelector('h1')
+// it will select the 1st h1 tag
+
+// document.querySelector('h2')
+// it will give 1st h2 tag 
+
