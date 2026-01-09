@@ -18,6 +18,11 @@
         <h2>Lorem, ipsum dolor.</h2>
         <h2>Lorem ipsum dolor sit amet consectetur.</h2>
         <p>Lorem ipsum dolor sit.</p>
+       <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+       </ul>
     </div>
 </body>
 </html>
@@ -54,3 +59,27 @@
 // document.querySelector('h2')
 // it will give 1st h2 tag 
 
+// now if we want to slect the unordered list one which is at line no 22..so we can also select this through querySelector
+// so 1st we have to select total ul->
+document.queryselector('ul')
+// now we are storing it into a variable
+const myul= document.queryselector('ul')
+// now we are running query again on this variable...so now we can select those "one" word->
+myul.querySelector('li')
+// and queryselector always selects the 1st one so now "one" is selected
+
+// we can also work over this "one"->
+// like if we want to change the colour of the background we can do->
+// 1st we can store it ino a variable->
+const turnGreen = myul.querySelector('li')
+turnGreen.style.backgroundColor="blue"
+// also if we want to add padding we can also do this->
+
+turnGreen.style.padding="10px"
+
+// if we want to chnage the text "one" to "blabla" we can also do this->
+//turnGreen.innerHTML
+// it will give "one"
+//then we can change->
+turnGreen.innerText= "blabla"
+// now it will change the text from "one" to "blabla"
