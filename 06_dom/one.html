@@ -19,9 +19,10 @@
         <h2>Lorem ipsum dolor sit amet consectetur.</h2>
         <p>Lorem ipsum dolor sit.</p>
        <ul>
-        <li>one</li>
-        <li>two</li>
-        <li>three</li>
+        <li class="list-item">one</li>
+        <li class="list-item">two</li>
+        <li class="list-item">three</li>
+        <li class="list-item">four</li>
        </ul>
     </div>
 </body>
@@ -119,3 +120,28 @@ const myH1 = document.querySelectorAll('h1')
 //since the file is containing only one h1 so it will only return this...but again if we want to add any style we can't add simply like without index though it is single value still we have to use indexing-->
 
 myH1[0].style.color = "blue"
+
+***now using forEach()->
+
+const templist = document.querySelectorAll('li')
+templist.forEach(function (l){
+    l.style.backgroundColor = "red"
+})
+
+//  now getting elements by class name->
+
+document.getelementsByClassName('list-item')
+//here it is giving html collection not nodelist but it is not giving any loop options like map, forEach
+
+so to use loop we can convert html collection to array
+
+const tempClass = document.getelementsByClassName('list-item')
+
+const myConvertedArray = Array.from(tempClass)
+// now it will convert the html collection into array and we can also see all the functions of array in this array's prototype
+
+now we can manipulate whatever we want to->
+
+myConvertedArray.forEach(function (li){
+    li.style.bgc = "orange"
+})
