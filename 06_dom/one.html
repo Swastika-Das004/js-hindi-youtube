@@ -32,6 +32,8 @@
 
 //things to understand thorugh console: 
 
+// all about querySelector-------->
+
 //we can select any element by many queries like --->
 
 //document.getElementbyId
@@ -83,3 +85,30 @@ turnGreen.style.padding="10px"
 //then we can change->
 turnGreen.innerText= "blabla"
 // now it will change the text from "one" to "blabla"
+
+//----------------------------------------------------------------
+
+// querySelectorAll
+
+// if we want to have all  list items--
+document.querySelectorAll('li')
+// it will give us nodelist
+
+//let's put it under a variable
+const templist = document.querySelectorAll('li')
+
+so these nodelists are not at all pure array..and we can see this 
+
+we need to always check if this is a real array by checking it's property..
+and in this case we can see map is absent in the property though forEach is present..but we know that map is one of the default property of array..
+
+now again if we want to add some style it will not support it because those are nodelist not array
+
+const templist = document.querySelectorAll('li')
+templist.style.color ="green"
+// it will show error as i have already mentioned that it is not at all array
+
+but we can work with it through index -->
+templist[0].style.color ="green"
+
+// now it will turn the text "one" into green color.
