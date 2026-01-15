@@ -13,4 +13,23 @@
         <div class="day">thursday</div>
     </div>
 </body>
+<script>
+    const parents = document.querySelector('.parent')
+    console.log(parents);// it will show all the elements inside parent class
+    // if we wanna see the children inside parents it will show us some html collection--
+    console.log(parents.children);
+    // since these html collections is a structure like array so if we want to access any element we can do it through indexing like--
+    console.log(parents.children[1]);
+    // it will definately give us tuesday..
+
+    // now if  we want to see the innerhtml of this children we can do->
+    console.log(parents.children[1].innerHTML); // it will only give us the text "tuesday".
+    
+
+
+    
+    
+    
+    
+</script>
 </html>
