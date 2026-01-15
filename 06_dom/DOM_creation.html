@@ -15,21 +15,45 @@
 </body>
 <script>
     const parents = document.querySelector('.parent')
-    console.log(parents);// it will show all the elements inside parent class
+    //console.log(parents);// it will show all the elements inside parent class
     // if we wanna see the children inside parents it will show us some html collection--
-    console.log(parents.children);
+    //console.log(parents.children);
     // since these html collections is a structure like array so if we want to access any element we can do it through indexing like--
-    console.log(parents.children[1]);
+    //console.log(parents.children[1]);
     // it will definately give us tuesday..
 
     // now if  we want to see the innerhtml of this children we can do->
-    console.log(parents.children[1].innerHTML); // it will only give us the text "tuesday".
+    //console.log(parents.children[1].innerHTML); // it will only give us the text "tuesday".
+    
+    // so we can conclude that every elemnts has children
+
+    // now we can use simple for loop for html collection..to use any function ofc we need to convert the html collection into array..but we can use simple for loop for httml collection because whenever it sees a array like structure it works..
+    for (let i = 0; i < parents.children.length; i++) {
+        //console.log(parents.children[i].innerHTML);
+            
+    }
+    parents.children[2].style.color = "green" // the wednesday text will turn into green
+
+    //if we want to access the first element of parent->
+    //console.log(parents.firstElementChild);
+    
+    // in the same way if we want to access the first element of parent->
+    //console.log(parents.lastElementChild);
+
+    // we can select with querySelector
+    const daayOne = document.querySelector('.day')
+    //console.log(daayOne);
+    
+    // if we want  to go direct to the parent ->
+    //console.log(daayOne.parentElement);// it will give all the elemnts of parents
+
+    //if we want to go to next sibling->
+    console.log(daayOne.nextElementSibling);
     
 
-
+    // ****** nodelist ******
     
-    
-    
+    console.log("NODES: ", parents.childNodes); // it will give nodelist of 9 ...in simple term we can see only 4 elements but after declaring parent class we have done "enter" so it also count this enter as a text..so counting all the enter and actual text it results 9 ...but only count 1st line break as text...as if we do 2 times enter after parent class it will not consider the 2nd enter as text   
     
 </script>
 </html>
