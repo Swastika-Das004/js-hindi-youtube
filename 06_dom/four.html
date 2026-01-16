@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai aur code | DOM</title>
+</head>
+<body style="background-color: black;color: rgb(217, 239, 234);">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    // if we want to add one more list item in any language we will do ->
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML =`${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+    // adding elements like this raises optimisation problem because you want to add each e,element at the very end of the list so basically for adding each element at last it traverse total list ..
+
+    // now we will see the same process but in a optimized way->
+
+    function addOptiLanguage(langname){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langname))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang');
+
+    
+    // editing any value
+
+    const secondLang = document.querySelector("li:nth-child(2)")
+    secondLang.innerHTML = "Mojo" // it is not the optimised way like previous
+
+    //  now doing it in a optimised way->
+    const newli = document.createElement('li')
+    newli.textContent = "ruby"
+    secondLang.replaceWith(newli)
+</script>
+</html>
+
+//16:00
