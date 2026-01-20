@@ -22,19 +22,21 @@ form.addEventListener('submit', function(e){
         results.innerHTML =" please give a valid weight"
     } else{
         const bmi = (weight / ((height * height) / 10000)).toFixed(2)
+
+        
+        let category = ""
+
+    // ✅ decide level based on BMI
+        if (bmi < 18.6) {
+            category = "Under Weight"
+        } else if (bmi >= 18.6 && bmi <= 24.9) {
+            category = "Normal Range"
+        } else {
+            category = "Over Weight"
+        }
          // now displaing the result
-         results.innerHTML = `<span>${bmi}</span>`    
+         results.innerHTML = `<span>Your BMI is <strong>${bmi}</strong></span><br><span>Category: <strong>${category}</strong></span>`   
     }
-    const bmi = (weight / ((height * height) / 10000)).toFixed(2)
     
-    //-------------------------------------------------
-    if (bmi <18.6) {
-        results.innerHTML = "under weight"
-            
-    }else if (bmi >=18.6 && bmi<=24.9) {
-            results.innerHTML = "normal range"            
-    } else {
-            results.innerHTML = "over weight"
-    }
 
 });
