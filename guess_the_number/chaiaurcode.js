@@ -14,6 +14,14 @@ let numguess = 1
 
 let playgame = true
 
+if(playgame){
+    submit.addEventListener('click', function(e){
+        e.preventDefault()
+        const guess = parseInt(userinput.value)
+        validateCheck(guess)
+    })
+}
+
 function validateCheck(guess){
     if(isNaN(guess)){
         console.log("please enter a valid number");
@@ -38,7 +46,7 @@ function checkguess(guess){
         endgame()
     } else if (guess < randomNumber){
         console.log("number is too loww");
-    } else (guess > randomNumber){
+    } else if (guess > randomNumber){
         console.log("number is too high");
     }
 
@@ -46,12 +54,17 @@ function checkguess(guess){
 
 function displayGuess(guess){
     userinput.value = '';
-    guessSlot.innerHTML += `${guess}`
-    numguess++
-    
+    guessSlot.innerHTML += `${guess} `
+    numguess++;
+    remaining.innerHTML = `${11 - numguess}`
+
 }
 
 function displayMessage(message){
+    lowOrHi.innerHTML = `<h2>${message}</h2>`
+}
+
+function endgame(){
 
 }
 
