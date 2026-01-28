@@ -1,4 +1,4 @@
-const randomNumber = (parseInt(Math.random() *100 +1)); // we want numbers from 1 to 100 and it hsould not be 0 thats why we have added 1
+let randomNumber = (parseInt(Math.random() *100 +1)); // we want numbers from 1 to 100 and it hsould not be 0 thats why we have added 1
 
 const submit = document.querySelector('#subt')
 const  userinput= document.querySelector('#guessField')
@@ -24,30 +24,32 @@ if(playgame){
 
 function validateCheck(guess){
     if(isNaN(guess)){
-        console.log("please enter a valid number");
+        displayMessage("please enter a valid number");
     }else if(guess < 1){
-        console.log("please enter a valid number");
+        displayMessage("please enter a valid number");
     } else if (guess > 100){
-        console.log("please enter a valid number");
+        displayMessage("please enter a valid number");
     } else {
-        prevguess.push()
-        if( guess === 11){
-            displayMessage(`gane is over!!..you have 0 guesses left`)
+        prevguess.push(guess)
+        if( numguess === 11){
+            displayMessage(`game is over!!..random number is ${randomNumber}`)
             endgame()
         } else {
+            prevguess.push(guess)
             displayGuess(guess)
+            checkguess(guess)
         }
     }
 }
 
 function checkguess(guess){
-    if(guess = randomNumber){
-        console.log("yeyyy!!!..you guessed it right");
+    if(guess === randomNumber){
+        displayMessage("yeyyy!!!..you guessed it right");
         endgame()
     } else if (guess < randomNumber){
-        console.log("number is too loww");
+        displayMessage("number is too loww");
     } else if (guess > randomNumber){
-        console.log("number is too high");
+        displayMessage("number is too high");
     }
 
 }
@@ -56,7 +58,7 @@ function displayGuess(guess){
     userinput.value = '';
     guessSlot.innerHTML += `${guess} `
     numguess++;
-    remaining.innerHTML = `${11 - numguess}`
+    remaining.innerHTML = `${11- numguess}`
 
 }
 
@@ -65,7 +67,28 @@ function displayMessage(message){
 }
 
 function endgame(){
+    userinput.value = ''
+    userinput.setAttribute('disabled', '')
+    p.classList.add('button')
+    p.innerHTML = `<h2 id ="newgame">Start new game</h2>`
+    startOver.appendChild(p) 
+    playgame = false
+    newgame();
+}
 
+function newgame(){
+    const newgamebutton =document.querySelector('#newgame')
+    newgamebutton.addEventListener('click', function(e){
+        randomNumber = (parseInt(Math.random() *100 +1))
+        prevguess = []
+        numguess = 1
+        guessSlot.innerHTML = ''
+        remaining.innerHTML =  `$(11 - numguess)`
+        userinput.removeAttribute('disabled')
+        startOver.removeChild(p)
+
+        playgame = true
+    })
 }
 
 
