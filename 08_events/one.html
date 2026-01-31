@@ -8,12 +8,12 @@
 <body style="background-color: #414141;color:  white;">
     <h2> Amazing images</h2>
     <div>
-        <ul>
+        <ul id="images">
             <li><img width="200px" src="../images/cat_1.png" alt=""></li>
             <li><img width="200px" src="../images/cat_02.png" alt=""></li>
             <li><img width="200px" src="../images/cat_03.png" alt=""></li>
-            <li><img width="200px" src="../images/cat_04.png" alt=""></li>
-            <li><img width="200px" src="../images/cat_05.png" alt=""></li>
+            <li><img width="200px" id="cute" src="../images/cat_04.png" alt="" ></li>
+            <li><img width="200px" src="../images/cat_05.png" alt=""></li>  <!--  onclick="alert('cutest_one')" // basically this nclick generates a alert messsage as given..like here if we click on this image it will show us alert as cutest one....// but this approach is wrong it not physibally good one approach..so the 2nd approach is in script tag->  -->
             <li ><a style="color: aqua;" href="https://google.com" id ="google">Google</a></li>
         </ul>
     </div>
@@ -21,5 +21,63 @@
 
 <script>
     // generally JS is a sequentially runnable language
+
+    // 2nd approach
+    // document.getElementById('cute').onclick = function(){
+    //     alert('cutest_one is clicked')
+    // }
+
+    
+    // best approach->
+
+    // document.getElementById('cute').addEventListener('click', function(){
+    //     alert("cutest one is clicked again")
+    // }) // why do we take this 3rd parameter like true false-> though this are basic but sometimes there are some application which will not be completed unless writing true or false ..)
+
+    // attachEvents
+
+    //type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    //clientX, c;ientY, screenX, screenY
+    // altkey , ctrlkey, shiftkey, keyCode
+
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     alert("clicked inside ul");
+        
+    // }, false)
+    // document.getElementById('cute').addEventListener('click', function(e){
+    //     alert("cute clicked");
+    //     // if we don;t ant that our event to bubble with other top messages so we will use stoppropagataion..it will only show cute clicked not also the "clicked inside ul"
+    //     e.stopPropagation()
+    // }, false)
+    // //what is event propagation?
+    // // it is of two types - event bubbling and event capturing...false is the default one and it is called event bubbling
+
+    // // so here we can see when we are clicking on any images which are all ul it will show us clicked inside ul but for the cute pic it is little bit confusing what will happen is t gonna show clicked inside ul or cute clicked 1st....so we can see it will show cute clicked 1st and then clicked inside ul..because of event bubbling...bubbles always happen from bottom to top..so that means it will 1st show the most inner layer text and then the most outer layer text...
+    // // but if we do the 3rd parameter as true it will show 1st clicked inside ul and then cute clicked and it is called bubbleCapturing..it will show us the most outer layer text 1st and then inner layer...
+
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault()// it will help to prevent submit things..like when we are clicking on google it will not take us to the google page because we are preventing it..
+    }, false)
+
+    // if we want to do things like when we are clicking on one image it will disappear->
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        // console.log(e.target);// it will show us the exact target in which we are clicking
+        //console.log(e.target.parentNode); 
+        // // by using parentNode it is not targetting the picture..it is showing that it is targetting li but not the picture
+        l//et removeIt = e.target.parentNode
+        removeIt.remove()
+        // but here comes one problem...if we click on some dots of the list it will remove all the elements together..because taget.parentnode means we are selecting ul..because target is all li and then it's parent is ul so if we click on any dots or any li it will delete everything together..but it shouldn't..so whast will we do->
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'i') {
+            
+        }
+        
+            
+        
+    })
+
 </script>
 </html>
