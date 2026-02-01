@@ -1,0 +1,27 @@
+// video 37
+
+// JS is a synchronus language..means ater executing one code another one will get executed
+
+// and it is single threaded language..it is comparatively slow due to getting executed in a single threaded
+
+// each operation waits for the last one to complete before executing
+
+// blocking code &  non-blocking code
+
+// blocking code block the flow of the program but non-blocking doesn't block execution
+
+// non blocking code supports reading file asynchronusly...like when it is reading file then it allows code to do something else simultanously
+// but it is not so good let's take an example->
+//if we are collecting an user data and we want to save it in a database...and it will behave like after saving the user data it will give the user notification that successfully logged in but here is a problem with non blocking code...ultimately database is a file structure..supppose we are writing non blocking code and the database is still now writing useer data but user got the notification that he i successfully logged in so thats not corrrect because it can happen that there is some problem in database while writing user's data..so it will be contradictory..that means non blovking code is not a good one...
+
+// non blocking and block coding both are important based on cases...
+
+// js engine is biult with memory heap and call stack
+
+// web API - browser
+// we can only use DOM api on web API if we are having node then ofc we will not be able to access DOM
+
+// task queue
+// see the vdo from 16:06  
+// fetch API 
+// it is like extended version of task queue...here everything is same but here comes some high priority tasks..call backs are here also
