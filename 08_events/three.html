@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video 38</title>
+</head>
+<body>
+    <h1>Chai aur JS>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+</body>
+<script>
+    document.querySelector('#start').addEventListener('click', function(){
+        const saydate = function(e){
+        console.log(e, Date.now());        
+    }
+    const intervalId = setInterval(saydate, 1000, "hiiii")
+
+      // to stop this continous printing we will use clearInterval
+    document.querySelector('#stop'). addEventListener('click', function(e){
+        clearInterval(intervalId)
+               
+    })
+    })
+    
+
+  
+
+    
+        
+</script>
+</html>
