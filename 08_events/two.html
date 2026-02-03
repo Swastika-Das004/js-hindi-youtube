@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video 38</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">STOP</button>
+</body>
+<script>
+    // read about clear interval and clear timeout.. it is basically part of the two function setInterval and setTimeout
+
+    // setInterval
+    setInterval(function(){
+        // console.log("helloooo");
+    },2000)  // and it behaves like after each given interval it will continuously give the result...means it will print "helloooo" after each 2 sec
+
+    //setTimeout
+    setTimeout(function(){
+        // console.log("hii swastika");
+    }, 4000) // it means after 4 second it will give "hii swastika"
+
+    // we can also use setTimeout like this->
+    const sayHi = function(){
+        console.log("learning async");
+    }
+
+    setTimeout(sayHi, 2000)
+
+
+    // now if we want to change the h1 of the page after 2 sec how will we do it->
+
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "our JS series"
+    }
+
+    // setTimeout(changeText, 2000)
+
+    // now next if we want to stop the timer..like in the above line we have done things like after 2 sec it will chnage the h1 from chair aur code to our JS series...so now we want to stop the chnage ..like if we click the stop button before 2 sec it will not chnage the H1..so what will we do->
+
+    //1st we will hold it in a variable
+    
+    const changeMe = setTimeout(changeText, 2000)
+
+    document.querySelector('#stop'),addEventListener('click', function(){
+        clearTimeout(changeMe)
+        console.log("STOPPED");
+    }) // so by clicking on stop we can stop the changing from chai aur code to our JS series 
+</script>
+</html>
