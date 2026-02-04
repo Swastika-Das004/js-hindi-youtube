@@ -1,0 +1,37 @@
+<!-- 
+🌐 What is AJAX? (in easy words)
+
+AJAX = a way for a webpage to talk to the server without reloading the page.
+
+Normally:
+👉 You click a button
+👉 Whole page reloads
+👉 New data comes
+
+With AJAX:
+👉 You click a button
+👉 Page does NOT reload
+👉 Only small data comes from server
+👉 Page updates that part only
+
+So the page feels fast and smooth ✅ 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API request</title>
+</head>
+<body>
+    <script>
+        const requestUrl = 'https://api.github.com/users/Swastika-Das004'
+        const xhr = new XMLHttpRequest() // this XMLHttpRequest is a method itself..and through this we can send data and we can also receive data
+        xhr.open('GET', requestUrl)
+        xhr.send  // 18:30
+
+
+    </script>
+</body>
+</html>
