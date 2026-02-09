@@ -20,6 +20,7 @@ So the page feels fast and smooth ✅
 
 // we can read api by pasting the api on json formatter and  having it as a tree format..
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,12 +28,34 @@ So the page feels fast and smooth ✅
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API request</title>
 </head>
-<body>
+<body style="background-color: black; color: beige;">
     <script>
         const requestUrl = 'https://api.github.com/users/Swastika-Das004'
         const xhr = new XMLHttpRequest() // this XMLHttpRequest is a method itself..and through this we can send data and we can also receive data
         xhr.open('GET', requestUrl)
-        xhr.send  // 18:30
+        xhr.onreadystatechange = function(){
+            console.log(xhr.readyState); // we can see the state chnaging number in console
+            
+            if(xhr.readyState === 4){
+                console.log(this.responseText);
+                // we were not getting any response text..because function did not get it what should it do..but when we put this before responseText it got confirmed that it should do somethinh for specifically under this function.
+                //now you can see responseText in console
+
+                //now if we want to know that how much follower i have how can we see->
+
+                // const data= this.responseText
+                // console.log(data.following);
+                
+                //  it is giving undefined because
+                // whenever response comes from url it comes as a string most of the time..
+                // so we need to convert it into JSON..so to convert it into json wrap the this.responseText and put JSON.parse before it...because parse converts string into JSON
+
+                const data= JSON.parse(this.responseText)
+                console.log(data.followers);// now it is giving me 1...because we have converted this string into JSON
+                
+            }
+        }
+        xhr.send()  
 
 
     </script>
