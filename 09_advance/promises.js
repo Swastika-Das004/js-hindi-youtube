@@ -4,6 +4,8 @@
 
 // promis has two parts - resolve and rejection
 
+
+// Promise One->
 const promiseOne = new Promise(function(resolve, reject){
     // simply do an async task like->
     // DB calls, cryptography, network 
@@ -21,6 +23,8 @@ promiseOne.then(function(){ // this function automatically receives an argument 
     // though we have called back resolve() thatswhy now "promise consumed" is also being prnted
 })
 
+
+// Promise TWO->
 // when we are not storing it under any variable then we can directly put .then after this total promise
 new Promise(function(resolve, reject){
     setTimeout(function(){
@@ -32,4 +36,32 @@ new Promise(function(resolve, reject){
     
 })
 
+// Promise THREE ->
+const promiseThree = new Promise(function(resolve, reject){
+    setTimeout(function(){
+        resolve({username: "swastika", email: "example@333.com"}) // so whatever parameter we pass through resolve it will be returned by .then's function
+    }, 1000)
+})
 
+promiseThree.then(function(user){
+    console.log(user);
+    
+})
+
+
+// Promise FOUR ->
+const promiseFour = new Promise(function(resolve, reject){
+    setTimeout(function(){
+        let error = true
+        if(!error){
+            resolve({username: "hitesh", password:"5987"})
+        } else {
+            reject('ERROR: something went wrong')
+        }
+    }, 1000)
+})
+
+promiseFour.then((user) => {
+
+    // 26:00
+})
