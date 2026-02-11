@@ -20,3 +20,16 @@ promiseOne.then(function(){ // this function automatically receives an argument 
     console.log("promise consumed");
     // though we have called back resolve() thatswhy now "promise consumed" is also being prnted
 })
+
+// when we are not storing it under any variable then we can directly put .then after this total promise
+new Promise(function(resolve, reject){
+    setTimeout(function(){
+        console.log("async task 2");
+        resolve()
+    }, 1000)
+}).then(function(){
+    console.log("Async 2 resolved");
+    
+})
+
+
