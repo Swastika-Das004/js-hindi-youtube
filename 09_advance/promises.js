@@ -52,27 +52,27 @@
 
 
 // Promise FOUR ->
-const promiseFour = new Promise(function(resolve, reject){
-    setTimeout(function(){
-        let error = false // if we do true here it will always return the rejection comment
-        if(!error){
-            resolve({username: "swastika", password:"5987"})
-        } else {
-            reject('ERROR: something went wrong')
-        }
-    }, 1000)
-})
+// const promiseFour = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = false // if we do true here it will always return the rejection comment
+//         if(!error){
+//             resolve({username: "swastika", password:"5987"})
+//         } else {
+//             reject('ERROR: something went wrong')
+//         }
+//     }, 1000)
+// })
 
-promiseFour.then((user) => {
-    // if we do->
-    console.log(user);
-    return user.username
-    // it will not give the username and all..so we have to add again .then()
-}).then((username) =>{ // this is called chaining this means which value is we are getting from above .then  it will be returned in a new chain
-    console.log(username); 
-}).catch(function(error){
-    console.log(error);   
-}).finally(() => console.log("the promise is either resolved or rejected")) // this finally always happens..
+// promiseFour.then((user) => {
+//     // if we do->
+//     console.log(user);
+//     return user.username
+//     // it will not give the username and all..so we have to add again .then()
+// }).then((username) =>{ // this is called chaining this means which value is we are getting from above .then  it will be returned in a new chain
+//     console.log(username); 
+// }).catch(function(error){
+//     console.log(error);   
+// }).finally(() => console.log("the promise is either resolved or rejected")) // this finally always happens..
 
 
 
@@ -80,7 +80,7 @@ promiseFour.then((user) => {
 
 const promiseFive = new Promise(function(resolve, reject){
     setTimeout(function(){
-        let error = false // if we do true here it will always return the rejection comment
+        let error = true // if we do true here it will always return the rejection comment
         if(!error){
             resolve({username: "swastika", password:"5987"})
         } else {
@@ -90,5 +90,18 @@ const promiseFive = new Promise(function(resolve, reject){
 })
 // now we will use async await instead of using .then()....this async await also works as then and chatch..it waits for the work completion ...once the work is done it goes ahead..otherwise it gives error at that moment...we use it when we don't want to go ahead without connection of database
 async function consumePromiseFive(){
-    const response = await promiseFive
+    // const response = await promiseFive
+    // console.log(response);
+    
+    // we need to wrap the total await part in try catch block...because we have declared true to the error...so it will ofc return  error..
+
+    try {
+        const response = await promiseFive
+        console.log(response);
+    } catch (error) {
+        console.log(error);
+        
+    }
 }
+
+consumePromiseFive()
