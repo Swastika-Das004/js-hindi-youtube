@@ -127,3 +127,16 @@ async function getallUsers() {
 }
 getallUsers()
 
+fetch('https://jsonplaceholder.typicode.com/users')
+.then((response) => {
+    return response.json()
+})
+.then((data) => {
+    console.log(data);
+    
+})
+.catch((error) => {
+    console.log(error);
+    
+})
+// if we follow this then() and catch() method then there is no need to put await here because after completing 1st then()..the 2nd then() can be executed..so ofc we will get all data...
