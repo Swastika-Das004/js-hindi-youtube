@@ -76,32 +76,54 @@
 
 
 
-// promise five->
+// // promise five->
 
-const promiseFive = new Promise(function(resolve, reject){
-    setTimeout(function(){
-        let error = true // if we do true here it will always return the rejection comment
-        if(!error){
-            resolve({username: "swastika", password:"5987"})
-        } else {
-            reject('ERROR: something went wrong')
-        }
-    }, 1000)
-})
-// now we will use async await instead of using .then()....this async await also works as then and chatch..it waits for the work completion ...once the work is done it goes ahead..otherwise it gives error at that moment...we use it when we don't want to go ahead without connection of database
-async function consumePromiseFive(){
-    // const response = await promiseFive
-    // console.log(response);
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true // if we do true here it will always return the rejection comment
+//         if(!error){
+//             resolve({username: "swastika", password:"5987"})
+//         } else {
+//             reject('ERROR: something went wrong')
+//         }
+//     }, 1000)
+// })
+// // now we will use async await instead of using .then()....this async await also works as then and chatch..it waits for the work completion ...once the work is done it goes ahead..otherwise it gives error at that moment...we use it when we don't want to go ahead without connection of database
+// async function consumePromiseFive(){
+//     // const response = await promiseFive
+//     // console.log(response);
     
-    // we need to wrap the total await part in try catch block...because we have declared true to the error...so it will ofc return  error..
+//     // we need to wrap the total await part in try catch block...because we have declared true to the error...so it will ofc return  error..
 
-    try {
-        const response = await promiseFive
-        console.log(response);
-    } catch (error) {
-        console.log(error);
+//     try {
+//         const response = await promiseFive
+//         console.log(response);
+//     } catch (error) {
+//         console.log(error);
         
-    }
-}
+//     }
+// }
 
-consumePromiseFive()
+// consumePromiseFive()
+
+async function getallUsers() {
+    try {
+        const response = await fetch("https://jsonplaceholder.typicode.com/users")
+        const data = await response.json()
+        console.log(data);
+    } catch (error) {
+        console.log("E: ", error);
+        // even after doing try catch it is not giving all the values  ..so we have added await before response.json() ...await response.json() is NOT for readability
+        //  It is used because json() takes time and returns a Promise. 
+
+        //🍕 Real-life analogy
+
+        // fetch() = waiter brings menu
+        // response.json() = waiter brings actual food
+
+        // If you don’t await, you’re trying to eat before food arrives 😄
+    }
+    
+}
+getallUsers()
+
