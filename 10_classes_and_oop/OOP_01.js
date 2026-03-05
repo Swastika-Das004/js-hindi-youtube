@@ -27,5 +27,29 @@ const user ={
 // when we try to print this in global environment in browser console then it gives a lots of functions and property but if we do this under node environment it will show nothing 
 
 
-//
+// constructor
+// if we want to make same structure many times we can use constructor
+
+// when we write ->
+//const promiseOne = new Promise()
+//const date = new Date()
+// here this "new" keyword is the constructor function // this new keyword or constructor function allow us to make multiple instances from one object literal
+
+function User (username, loginCount, isLoggedIn){
+    this.username = username
+    this.loginCount = loginCount
+    this.isLoggedIn = isLoggedIn
+
+    return this
+}
+ 
+const userOne = User("srijon", 3, true);
+const userTwo = User("sostuu", 9, false);
+console.log(userOne);// so when we are printing this it is overwriting userOne values...so this is not good for coding..it will damage total code...so that's why we need new keyword...it every time makes a new copy without overwriting any value and also doesn't damage other value. 
+
+// so here just by adding new keyword we can avoid this code malfunction..
+
+//26:32
+
+
 
