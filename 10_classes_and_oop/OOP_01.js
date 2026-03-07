@@ -40,16 +40,32 @@ function User (username, loginCount, isLoggedIn){
     this.loginCount = loginCount
     this.isLoggedIn = isLoggedIn
 
+    // we can also use it as function->
+    this.greeting = function (){
+        console.log(`welcome ${this.username}`);
+        
+    }
+
     return this
 }
  
-const userOne = User("srijon", 3, true);
-const userTwo = User("sostuu", 9, false);
-console.log(userOne);// so when we are printing this it is overwriting userOne values...so this is not good for coding..it will damage total code...so that's why we need new keyword...it every time makes a new copy without overwriting any value and also doesn't damage other value. 
+// const userOne = User("srijon", 3, true);
+// const userTwo = User("sostuu", 9, false);
+// console.log(userOne);
+// so when we are printing this it is overwriting userOne values even without printing the userTwo...so this is not good for coding..it will damage total code...so that's why we need new keyword...it every time makes a new copy without overwriting any value and also doesn't damage other value. 
 
 // so here just by adding new keyword we can avoid this code malfunction..
 
-//26:32
+// now if we write this same thing but with new keyword what will happen->
 
+const userOne =new User("srijon", 3, true);
+const userTwo = new User("sostuu", 9, false);
+console.log(userOne);
 
+// STTEP 1 ->  whenever we use "new" keyword it makes a empty object  which is called instance
 
+// STEP 2 -> for using this "new" keyword a constructor function is being called ( it packs all the arguments and give it to you)
+
+// STEP 3 -> after that inside "this" keyword all the argumnets are injected
+
+// STEP 4 -> and in last step we get whatever we need inside function
